@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "EjemploUniversal/1.0.0": {
+        "dependencies": {
+          "ClasesEjemploUniversal": "1.0.0"
+        },
+        "runtime": {
+          "EjemploUniversal.dll": {}
+        }
+      },
+      "ClasesEjemploUniversal/1.0.0": {
+        "runtime": {
+          "ClasesEjemploUniversal.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EjemploUniversal/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ClasesEjemploUniversal/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

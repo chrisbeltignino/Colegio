@@ -1,0 +1,12 @@
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Sobrecarga\ClassSumador\bin\Debug\net5.0\ClassSumador.deps.json
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Sobrecarga\ClassSumador\bin\Debug\net5.0\ClassSumador.dll
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Sobrecarga\ClassSumador\bin\Debug\net5.0\ClassSumador.pdb
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Sobrecarga\ClassSumador\obj\Debug\net5.0\ClassSumador.csproj.AssemblyReference.cache
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Sobrecarga\ClassSumador\obj\Debug\net5.0\ClassSumador.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Sobrecarga\ClassSumador\obj\Debug\net5.0\ClassSumador.AssemblyInfoInputs.cache
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Sobrecarga\ClassSumador\obj\Debug\net5.0\ClassSumador.AssemblyInfo.cs
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Sobrecarga\ClassSumador\obj\Debug\net5.0\ClassSumador.csproj.CoreCompileInputs.cache
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Sobrecarga\ClassSumador\obj\Debug\net5.0\ClassSumador.dll
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Sobrecarga\ClassSumador\obj\Debug\net5.0\refint\ClassSumador.dll
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Sobrecarga\ClassSumador\obj\Debug\net5.0\ClassSumador.pdb
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Sobrecarga\ClassSumador\obj\Debug\net5.0\ref\ClassSumador.dll

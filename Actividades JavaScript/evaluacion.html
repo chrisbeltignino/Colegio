@@ -1,0 +1,222 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" language="javascript">
+
+function todo()
+{
+  var digitos = document.getElementById("cuil").value;
+  var dv = document.getElementById("dv").value;
+      
+  //Split divide una cadena en un SET
+  digitos = digitos.split("");
+  var resultado = validarDV(digitos, dv);
+  if (resultado) 
+  {
+    alert("El DÍGITO VERIFICADOR ES CORRECTO");
+  } 
+  else 
+  {
+    alert("El DÍGITO VERIFICADOR ES INCORRECTO");
+  }
+      
+  function validarDV(digitos,digitoVerificadorAComprobar) 
+  {
+    var serie = []; //La inicializo vacia, depende del largo de "digitos"
+    switch (digitos.length) 
+    {
+      case 6:
+        serie = [7,6,5,4,3,2];
+      break;
+      case 7:
+        serie = [2,7,6,5,4,3,2];
+      break;
+      case 8:
+        serie = [3,2,7,6,5,4,3,2];
+      break;
+      case 10:
+        serie = [5,4,3,2,7,6,5,4,3,2];
+      break;
+      default:
+        alert ("HA OCURRIDO UN ERROR, EL LARGO DEL cuil/cuit DEBE SER ENTRE 10.");
+      return false;
+      break;
+    }
+    
+    var suma = 0;
+        
+    for (var i = 0; i < digitos.length; i++) 
+    {
+      suma = suma + digitos[i] * serie[i];
+    }
+    
+    var parteEntera = parseInt(suma / 11);
+    var resto = suma - (11 *  parteEntera);
+    var dv = 11 - resto;
+        
+      //Comparación
+    if (dv == digitoVerificadorAComprobar) return true;
+    return false;
+  }
+}
+
+function valida_envia()
+{ 
+  if (document.miform.nombre.value.length==0)
+  { 
+    alert("Tiene que escribir su Nombre") 
+    document.miform.nombre.focus() 
+  }
+
+  if (document.miform.apellido.value.length==0)
+  { 
+    alert("Tiene que escribir su Apellido") 
+    document.miform.apellido.focus() 
+  }
+
+  if (document.miform.cuil.value.length==0)
+  { 
+    alert("Tiene que escribir su CUIL") 
+    document.miform.cuil.focus() 
+  }
+
+  if (document.miform.dv.value.length==0)
+  { 
+    alert("Tiene que escribir su Digito Verificador") 
+    document.miform.dv.focus() 
+  }
+
+  if (document.miform.cant.length==0)
+  { 
+    alert("Tiene que escribir cuantos pasajes va pagar") 
+    document.miform.cant.focus() 
+  }
+}
+
+function suma()
+{
+  if (document.miform.total.value == 0)
+  {
+    alert("No piede ingresar 0 pasajes. Intente de vuelta");
+  }
+  var subdesubtotal = document.getElementById("cant").value;
+	var subtotal;
+	var op = document.getElementById("pais").value;
+	switch (op)
+	{
+		case 'brasil':
+			subtotal = eval(subdesubtotal)*2500;
+		break;
+		case 'chile':
+			subtotal = eval(subdesubtotal)*2700;
+		break;
+		case 'colombia':
+			subtotal = eval(subdesubtotal)*4500;
+		break;
+		case 'peru':
+			subtotal = eval(subdesubtotal)*5500;
+		break;
+	}
+
+  var total;
+  var alo = document.getElementById("cuota").value;
+  switch(alo)
+  {
+    case 'efectivo':
+      total = eval(subtotal)+0;
+    break;
+    case '3':
+      total = eval(subtotal)*1.10;
+    break;        
+    case '6':
+      total = eval(subtotal)*1.15;
+    break;
+    case '12':
+      total = eval(subtotal)*1.20;
+    break;
+  }
+
+  if (document.getElementById("ch1").checked)
+  {
+    total = eval(total) + 400;
+  }
+
+  if (document.getElementById("ch2").checked)
+  {
+    total = eval(total) + 600;
+  }
+
+  if (document.getElementById("ch3").checked)
+  {
+    total = eval(total) + 300;
+  }
+
+	document.miform.total.value = total;
+}
+
+</script>
+
+</head>
+<body>
+<form name="miform" method="get" action="">
+<fieldset style="width:350px;position:relative ; font-size:20px; " >
+    <legend>Agencia de viajes:</legend>
+Nombre               :<input id="nombre" type="text" name="N10" ><br>
+Apellido             :<input id="apellido" type="text" name="N20" ><br>
+Cuil                 :<input type="number" id="cuil" ><br>
+Digito Verificador   :<input type="number" id="dv" ><br>
+<input type="button" value="Verificar CUIL" onclick="todo()"><br>
+Cantidad de pasajes: <input type="number" id="cant" name="N40" style="width:100px"><br>
+
+</fieldset>
+<fieldset style="width:150px; position:relative ; font-size:20px; margin-left:400px; top:-160px;">
+  <legend>Pai­s Destino </legend>
+    <select id="pais" name="pais">
+      <option id="brasil" value="brasil">Brasil</option>
+      <option id="chile" value="chile">Chile</option>
+      <option id="colombia" value="colombia">Colombia</option>
+      <option id="peru" value="peru">Perú</option>
+    </select>
+</fieldset>
+<br>
+<br>
+<br>
+<fieldset style="height:90px; width:190px; font-size:20px; position:relative ; margin-left:700px; top:-295px; ">
+    <legend>Adicional viaje :</legend>
+ <input type="checkbox" id="ch1"  name="camarera" value="400" onclick="chek1()" />Camarera<br><!--Estos valores se suman si son seleccionado se calcula por cada pasaje  -->
+ <input type="checkbox" id="ch2"  name="almuerzo" value="600" />Almuerzo o Cena<br>
+ <input type="checkbox" id="ch3"  name="baulera" value="300" />Baulera<br>
+ </fieldset>
+<fieldset style="height:90px; width:190px; font-size:20px; position:relative ; margin-left:1050px; top:-410px;">
+    <legend>Forma de pago</legend>
+      <select style="width: 150px;" name="sumare" id="cuota" size="1" >
+        <option id="efectivo" value="efectivo">Efectivo</option> <!--este es el % que se agrega al valor de la venta realizada -->
+        <option id="3" value="3">Tarjeta-3Cuotas</option>
+        <option id="6" value="6">Tarjeta-6Cuotas</option>
+        <option id="12" value="12">Tarjeta-12Cuotas</option>
+      </select>
+</fieldset>
+<fieldset  style="position:relative ; top:-275px; ">
+  <marquee  direction=right style="top:90px;" > <font style=" font-size:30px;" >Evaluación 2 trimestre Tecnica 2</font> </marquee>
+
+  <hr  size=28 color=blue >
+    <font style=" font-size:19px;">
+      Se realiza la venta de pasajes para distintos destinos, el valor de la venta se obtiene multiplicando 
+      la cantidad de pasajes por el destino elegido, a este valor se suma los adicionales selecionados 
+      correspondiendo a un pasajero, si son dos pasajes, se multiplica por dos.Cuando elegimos la forma de pago
+      "Efectivo" no tiene recardo, si es "tarjeta"" al valor de la venta se incrementa segun las cuotas, 
+      debemos mostrar el valor de cada cuota, deberan mostrar un mensaje sobre el dato que debe ser ingresado en cada text,el dato debera ser verificado 
+    </font>
+</fieldset>
+<fieldset  style="position:relative ; top:-175px; font-size:30px; ">
+  <center>
+    <input type="button" name="respuesta" value="Total" onclick="suma()" style=" font-size:20px;"  >
+    <input type="text" name="total" id="total" disabled="false">
+    Valor de cada cuota:<input type="text" name="cuota"><br>
+    <input type="submit" style=" font-size:20px;" />
+</center>
+</fieldset>
+
+</form>
+</body>
+</html>

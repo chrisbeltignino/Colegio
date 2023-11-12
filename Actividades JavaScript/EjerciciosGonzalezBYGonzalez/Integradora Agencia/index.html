@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Agency</title>
+
+	<script>
+	function checkcuitl(){
+		var nCuix = document.formulario.cuil.value;// numero de cuil ingresado
+		tamanio = nCuix.length;//tiene el tam del cuil tamanio=11
+		nVerif = '5432765432';
+
+		if (tamanio == 11)
+		{
+			aMult = nVerif.split('');//Separa el numero para validar 5,4,3,2,7,6,5,4,3,2
+			aCUIx = nCuix.split(''); //Separa el cuil en 2,0,3,2,1,9,2,3,6,7,5
+
+			var iResult = 0;
+			for(i = 0; i < 10; i++)
+			{
+			iResult += aCUIx[i] * aMult[i];
+			}
+			iResult = (iResult % 11); //suma 124 y el modulo es 3
+			iResult = 11 - iResult;
+
+			if (iResult == 11) iResult = 0;
+			if (iResult == 10) iResult = 9;
+
+			if (iResult == aCUIx[10])
+			{
+			alert ('CUIT ' + nCuix + ' valido');
+			return true;
+			}
+			else
+			alert ('CUIT ' + nCuix + ' invalido');
+			document.getElementById("cuil").focus();
+		}
+		else alert ('CUIT ' + nCuix + ' invalido');
+		document.getElementById("cuil").focus();
+		return false;
+	}
+	</script>
+
+	<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+	<style type="text/css">
+.style3 {
+	font-size: x-large;
+	text-decoration: underline;
+}
+.style4 {
+	text-decoration: underline;
+	font-size: medium;
+}
+.style6 {
+	font-size: small;
+}
+</style>
+</head>
+<body>
+<header>
+	<div class="flex">
+		<div class="logo" style="width: 2000px"></div>
+	</div>
+</header>
+<label><center class="style3">Agencia de Autos</center></label>
+
+<form action="subir.php" name="formulario" id="formulario" method="POST">
+
+<main>
+	<label>
+	<span class="style4">
+	<br>
+<br>
+Datos Personales:</span></label>
+<br>
+	<label for="nombre"><span class="style6">Nombre:</span></label>
+	<input type="text" placeholder="Ingrese Nombre" name="nombre" id="nombre" onkeyup="this.value=Text(this.value)" required/>
+	<br><br>
+	<label for="apellido"><span class="style6">Apellido:</span></label>
+	<input type="text" placeholder="Ingrese Apellido" name="apellido" id="apellido" onkeyup="this.value=Text(this.value)" required/>
+	<br><br><br>
+	<label for="cuit"><span class="style6">CUIL:</span></label>
+	<input type="text" name="cuil" id="cuil" maxlength="11" value="" placeholder="Ingrese CUIL" onkeyup="this.value=Numeros(this.value)" required/>
+
+	<br><br>
+	<input type="button" name="verifica" value="Verificar CUIL" onclick=checkcuitl();>
+	<br><br><br>
+
+	<label for="marcas"><span class="style6">Seleccionar marca de auto:</span></label>
+	<br>
+	<select name="marca" id="marca">
+		<option id="Renault" value="Renault" onclick="auto()">Renault</option>
+		<option id="Fiat" value="Fiat" onclick="auto()">Fiat</option>
+		<option id="Peugeot" value="Peugeot" onclick="auto()">Peugeot</option>
+		<option id="Honda" value="Honda" onclick="auto()">Honda</option>
+		<option id="Toyota" value="Toyota" onclick="auto()">Toyota</option>
+		<option id="Chrysler" value="Chrysler" onclick="auto()">Chrysler</option>
+		<option id="Chevrolet" value="Chevrolet" onclick="auto()">Chevrolet</option>
+	</select>
+	<br><br>
+
+	<label for="precio"><span class="style6">Precio del Auto:</span></label>
+	<input type="text" name="precio" id="precio" readonly="readonly" maxlength="7" style="width: 70px"/>
+	<br><br>
+
+	<fieldset style=" width:300px; ">
+	<legend><span class="style2">Condicion de Pago:</span></legend>
+	<label>Efectivo <input type="radio" id="efectivo" name="option" value="Efectivo" checked="true" onclick="chek()" /></label>
+	<label>Financiado <input type="radio" id="financiado" name="option" value="Financiado" onclick="chek()" /></label>
+	</fieldset>
+	<br><br>
+	<label><span class="style6">Tarjeta de credito:</span></label>
+	<input type="text" name="tarjeta" id="tarj" disabled="true" value="" maxlength="19" onkeyup="Card(event, this)" required/>
+	<br><br>
+	<label for="cuotas"><span class="style6">Cantidad de Cuotas:</span></label>
+	<select disabled="false" name="cuota" id="cuota">
+		<option id="6">6</option>
+		<option id="12">12</option>
+		<option id="24">24</option>
+	</select>
+	<br><br>
+
+	<label for="total"><span class="style6">Precio Total:</span></label>
+	<input type="text" id="total" readonly="readonly" name="total" style="width: 70px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+	<input type="button" name="precio1" value="Ver Precio" onclick="calcula()"><br>
+<br>
+<br>
+	<input type="submit" name="enviar" value="ENVIAR" onclick="validar()"/><br>
+
+</main>
+</form>
+<footer>
+<div class="flex">
+
+	<b style="float: right;">@ChrisFacha</b>
+</div>
+<br>
+</footer>
+	<script src="main.js"></script>
+</body>
+</html>

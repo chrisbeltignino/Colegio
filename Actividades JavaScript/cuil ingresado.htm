@@ -1,0 +1,54 @@
+﻿<html>
+  <head>
+    <meta charset="UTF-8"/>
+  </head>
+
+  <body>
+
+    <script type="text/javascript">
+      var digitos = prompt("INGRESE SU cuil/cuit SIN PUNTOS,SIN GUIÓN Y SIN DÍGITO VERIFICADOR:");
+      var dv = prompt("INGRESE EL DÍGITO VERIFICADOR DE SU cuil/cuit:");
+      //Split divide una cadena en un SET
+      digitos = digitos.split("");
+      var resultado = validarDV(digitos, dv);
+      if (resultado) {
+        alert("El DÍGITO VERIFICADOR ES CORRECTO");
+      } else {
+        alert("El DÍGITO VERIFICADOR ES INCORRECTO");
+      }
+      function validarDV(digitos,digitoVerificadorAComprobar) {
+        var serie = []; //La inicializo vacia, depende del largo de "digitos"
+        switch (digitos.length) {
+          case 6:
+            serie = [7,6,5,4,3,2];
+            break;
+          case 7:
+            serie = [2,7,6,5,4,3,2];
+            break;
+          case 8:
+            serie = [3,2,7,6,5,4,3,2];
+            break;
+          case 10:
+            serie = [5,4,3,2,7,6,5,4,3,2];
+            break;
+          default:
+            alert ("HA OCURRIDO UN ERROR, EL LARGO DEL cuil/cuit DEBE SER ENTRE 10.");
+            return false;
+            break;
+        }
+        var suma = 0;
+        
+        for (var i = 0; i < digitos.length; i++) {
+          suma = suma + digitos[i] * serie[i];
+        }
+        var parteEntera = parseInt(suma / 11);
+        var resto = suma - (11 *  parteEntera);
+        var dv = 11 - resto;
+        //Comparación
+        if (dv == digitoVerificadorAComprobar) return true;
+        return false;
+      }
+    </script>
+
+  </body>
+</html>

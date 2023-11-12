@@ -1,0 +1,19 @@
+#include <stdlib.h>     /* atoi*/
+#include<iostream>
+using namespace std;
+double ConvierteANumero(char valor[3])
+{   int n;
+    n = atoi(valor); 
+    return n; 
+}
+int main ()
+{
+    char valor[3];
+    int n,m=10;
+    cout<< ("Ingrese edad: ");
+    cin>>valor;
+    n=ConvierteANumero(valor);
+    m=m+n;
+    cout<< "Edad antigua:"<<n<<"\nEdad nueva  :"<<m;
+  return 0;
+}

@@ -1,0 +1,3 @@
+{
+			alert("el total es:"'pretotal1');
+		}

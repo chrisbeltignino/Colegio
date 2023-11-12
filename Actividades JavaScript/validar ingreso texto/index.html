@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Formulario de contacto</title>
+
+	<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+<body>
+<header>
+	<div class="flex">
+		<div class="logo"></div>
+	</div>
+</header>
+<label><center>Agencia de Autos</center></label>
+
+<form method="post" action="add_reg.php">
+<main>
+	<label><span>Datos Personales:</span></label>
+	<br>
+	<br>
+	<label for="nombre"><span>Nombre:</span></label>
+	<input type="text" name="Nombre" id="NOMBRE"/>
+	<br><br>
+	<label for="apellido"><span>Apellido:</span></label>
+	<input type="text" name="Apellido" id="APELLIDO"/>
+	<br><br><br>
+	<label for="cuit"><span>Cuil: (Ingrese su cuil/cuit sin puntos, sin guion y sin digito verificador)</span></label>
+	<input type="number" name="Cuil" id="CUIL" maxlength="10"/>
+	<br><br>
+	<label for="dv"><span>Ingrese Digito Verificador:</span></label>
+	<input type="number" name="Numero Verificador" id="NUMERO VERIFICADOR"/>
+	<br><br>
+	<input type="button" name="asdasf" value="Verificar CUIL" onclick="todo()">
+	<br><br><br>
+
+	<label for="marcas"><span>Seleccionar marca de auto:</span></label>
+	<br>
+	<select name="marca" id="marca">
+		<option id="renault" value="renault" onclick="auto()">Renault</option>
+		<option id="fiat" value="fiat" onclick="auto()">Fiat</option>
+		<option id="peugeot" value="peugeot" onclick="auto()">Peugeot</option>
+		<option id="honda" visible="false" value="honda" onclick="auto()">Honda</option>
+		<option id="toyota" value="toyota" onclick="auto()">Toyota</option>
+		<option id="chrysler" value="chrysler" onclick="auto()">Chrysler</option>
+		<option id="chevrolet" value="chevrolet" onclick="auto()">Chevrolet</option>
+	</select>
+	<br><br>
+
+	<label for="precio"><span>Precio del Auto:</span></label>
+	<input type="text" name="precio" id="precio" disabled="false" maxlength="7"/>
+	<br><br>
+
+	<fieldset style=" width:200px; ">
+	<legend><span class="style2">Condicion de Pago:</span></legend>
+	<input type="radio" id="efectivo" name="option" value="Efectivo" checked="true" onclick="chek()" /><label>Efectivo</label>
+	<input type="radio" id="financiado" name="option" value="Financiado" onclick="chek()" /><label>Financiado</label>
+	</fieldset>
+	<br><br>
+	<label>Tarjeta de credito:</label>
+	<input type="text" id="cred" disabled="false" value="" maxlength="19" onkeyup="Card(event, this)" />
+	<br><br>
+	<label for="cuotas"><span>Cantidad de Cuotas:</span></label>
+	<select disabled="false" name="cuota" id="cuota">
+		<option id="6">6</option>
+		<option id="12">12</option>
+		<option id="24">24</option>
+	</select>
+	<br><br>
+
+	<label for="total"><span>Precio Total:</span></label>
+	<input type="text" id="total" disabled="false" name="hola bb">
+	<br><br>
+
+	<label for="pretotal" id="pretotal"><span></span></label>
+	<input type="button" name="calcu" value="Ver Precio" onclick="calcula()">
+	<input type="submit" name="enviar" value="Enviar" onclick="validar()">
+</main>
+</form>
+
+<footer>
+<div class="flex">
+
+	<b style="float: right;">KE ONDA LOKO CUMBIA KARRETILLA CAJETEADA LOCOOOOOOOOOOOOOOOOOO</b>
+</div>
+<br>
+</footer>
+	<script src="main.js"></script>
+</body>
+</html>

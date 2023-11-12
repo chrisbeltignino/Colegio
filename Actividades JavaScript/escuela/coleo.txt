@@ -1,0 +1,102 @@
+header, section, footer, aside, nav, article, figure{
+	display: block;
+}
+
+* {
+	vertical-align: baseline;
+	font-weight: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: source-sans-pro, "Gill Sans", Arial, sans-serif;
+	color: #666;
+}
+
+header {
+	width: 100%;
+	padding: 110px 0px;
+	background: #3498DB;
+	color: #FFF;
+}
+
+header h1, header h2 {
+	width: 45%;
+	margin: 0 1% .4em;
+	font-size: 3em;
+}
+
+header h2 {
+	font-size: 1.7em;
+}
+
+#anima {
+	width: 320px;
+	height: 310px;
+	right: 0px;
+	top: 4%;
+	background: #FFF;
+	position: absolute;
+	float: right;
+	margin-right: 2%;
+	background: url(cole.png);
+	background-size: 100% 100%;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E.E.S.T. N°2 - Escuela de Educacion Secundaria Técnica N°2</title>
+	<meta name="description" content="Es una Escuela Técnica de programación e informatica de Temperley (Lavalle num direc) bla bla bla...">
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+<header>
+	<section class="contenedor">
+		<div id="anima">
+		</div>
+		<h1>E.E.S.T. N°2</h1>
+		<h2>Escuela de Educacion Secundaria Técnica N°2<br> de Temperley<br></h2>
+	</section>
+</header>
+
+<nav>
+	<ul>
+		<li class="inicio">Home</li>
+		<li class="info">Informacion</li>
+		<li class="contacto">Contactos</li>
+		<li class="formulario">Inscribirse</li>
+	</ul>
+</nav>
+
+<section class="contenedor">
+	
+	<article>
+		<div>
+			<p>Mas Información</p>
+			<p>BLA BLA BLA...</p>
+			<p id="boton1"><a href="#">Información de la carrera</a></p>
+		</div>
+		<h1>Programación</h1>
+	</article>
+
+	<article>
+		<div>
+			<p>Mas Información</p>
+			<p>BLA BLA BLA...x2</p>
+			<p id="boton2"><a href="#">Información de la carrera</a></p>
+		</div>
+		<h1>Informatica</h1>
+	</article>
+</section>
+
+
+</body>
+</html>

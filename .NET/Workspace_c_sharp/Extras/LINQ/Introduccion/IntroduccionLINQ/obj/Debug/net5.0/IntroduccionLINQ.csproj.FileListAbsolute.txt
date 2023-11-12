@@ -1,0 +1,16 @@
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Extras\LINQ\Introduccion\IntroduccionLINQ\bin\Debug\net5.0\IntroduccionLINQ.exe
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Extras\LINQ\Introduccion\IntroduccionLINQ\bin\Debug\net5.0\IntroduccionLINQ.deps.json
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Extras\LINQ\Introduccion\IntroduccionLINQ\bin\Debug\net5.0\IntroduccionLINQ.runtimeconfig.json
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Extras\LINQ\Introduccion\IntroduccionLINQ\bin\Debug\net5.0\IntroduccionLINQ.runtimeconfig.dev.json
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Extras\LINQ\Introduccion\IntroduccionLINQ\bin\Debug\net5.0\IntroduccionLINQ.dll
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Extras\LINQ\Introduccion\IntroduccionLINQ\bin\Debug\net5.0\IntroduccionLINQ.pdb
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Extras\LINQ\Introduccion\IntroduccionLINQ\obj\Debug\net5.0\IntroduccionLINQ.csproj.AssemblyReference.cache
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Extras\LINQ\Introduccion\IntroduccionLINQ\obj\Debug\net5.0\IntroduccionLINQ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Extras\LINQ\Introduccion\IntroduccionLINQ\obj\Debug\net5.0\IntroduccionLINQ.AssemblyInfoInputs.cache
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Extras\LINQ\Introduccion\IntroduccionLINQ\obj\Debug\net5.0\IntroduccionLINQ.AssemblyInfo.cs
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Extras\LINQ\Introduccion\IntroduccionLINQ\obj\Debug\net5.0\IntroduccionLINQ.csproj.CoreCompileInputs.cache
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Extras\LINQ\Introduccion\IntroduccionLINQ\obj\Debug\net5.0\IntroduccionLINQ.dll
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Extras\LINQ\Introduccion\IntroduccionLINQ\obj\Debug\net5.0\refint\IntroduccionLINQ.dll
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Extras\LINQ\Introduccion\IntroduccionLINQ\obj\Debug\net5.0\IntroduccionLINQ.pdb
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Extras\LINQ\Introduccion\IntroduccionLINQ\obj\Debug\net5.0\IntroduccionLINQ.genruntimeconfig.cache
+C:\Users\54115\Desktop\PC\Programacion\.NET\Workspace_c_sharp\Extras\LINQ\Introduccion\IntroduccionLINQ\obj\Debug\net5.0\ref\IntroduccionLINQ.dll

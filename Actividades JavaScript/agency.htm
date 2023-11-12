@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Agencia de Autos</title>
+<style type="text/css">
+
+.style1 {
+	font-size: xx-large;
+	font-weight: bold;
+	text-decoration: underline;
+}
+.style2 {
+	font-size: large;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.style3 {
+	font-size: x-large;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+</style>
+</head>
+
+<body style="background-color: #FF0000">
+
+<script type="text/javascript" language="JavaScript">
+
+function todo()
+{
+
+  var digitos = document.getElementById("cuil").value;
+  var dv = document.getElementById("numero verificador").value;
+
+  //Split divide una cadena en un SET
+  digitos = digitos.split("");
+  var resultado = validarDV(digitos, dv);
+  if (resultado)
+  {
+    alert("El DÍGITO VERIFICADOR ES CORRECTO");
+  }
+  else
+  {
+    alert("El DÍGITO VERIFICADOR ES INCORRECTO");
+  }
+
+  function validarDV(digitos,digitoVerificadorAComprobar)
+  {
+    var serie = []; //La inicializo vacia, depende del largo de "digitos"
+    switch (digitos.length)
+    {
+      case 6:
+        serie = [7,6,5,4,3,2];
+      break;
+      case 7:
+        serie = [2,7,6,5,4,3,2];
+      break;
+      case 8:
+        serie = [3,2,7,6,5,4,3,2];
+      break;
+      case 10:
+        serie = [5,4,3,2,7,6,5,4,3,2];
+      break;
+      default:
+        alert ("HA OCURRIDO UN ERROR, EL LARGO DEL cuil/cuit DEBE SER ENTRE 10.");
+      return false;
+      break;
+    }
+
+    var suma = 0;
+
+    for (var i = 0; i < digitos.length; i++)
+    {
+      suma = suma + digitos[i] * serie[i];
+    }
+
+    var parteEntera = parseInt(suma / 11);
+    var resto = suma - (11 *  parteEntera);
+    var dv = 11 - resto;
+
+      //Comparación
+    if (dv == digitoVerificadorAComprobar) return true;
+    return false;
+  }
+
+}
+
+function validar()
+{
+  if (document.getElementById("NOMBRE").value == '' && document.getElementById("NOMBRE").type == 'text')
+  {
+    alert("El campo " + document.getElementById("NOMBRE").id + " está vacio y es OBLIGATORIO LLENARLO");
+  }
+
+  if (document.getElementById("APELLIDO").value == '' && document.getElementById("APELLIDO").type == 'text')
+  {
+    alert("El campo " + document.getElementById("APELLIDO").id + " está vacio y es OBLIGATORIO LLENARLO");
+  }
+
+  if (document.getElementById("CUIL").value == '' && document.getElementById("CUIL").type == 'number')
+  {
+    alert("El campo " + document.getElementById("CUIL").id + " está vacio y es OBLIGATORIO LLENARLO");
+  }
+
+  if (document.getElementById("NUMERO VERIFICADOR").value == '' && document.getElementById("NUMERO VERIFICADOR").type == 'number')
+  {
+    alert("El campo " + document.getElementById("NUMERO VERIFICADOR").id + " está vacio y es OBLIGATORIO LLENARLO");
+  }
+}
+
+function auto()
+{
+  alert("BOCA LA CONCHA DE TU MADRE");
+}
+
+function chek()
+{
+  if (document.getElementById("efectivo").checked)
+  {
+    document.getElementById("cuota").disabled = true;
+  }
+
+  if (document.getElementById("financiado").checked)
+  {
+    document.getElementById("cuota").disabled = false;
+		document.getElementById("cred").disabled = false;
+  }
+}
+
+function calcula()
+{
+  //var cuota = document.getElementById("cuota");
+  if (document.getElementById("efectivo").checked)
+  {
+    document.getElementById("cuota").disabled = true;
+    var auto;
+    var op2 = document.getElementById("marca").value;
+    switch(op2)
+    {
+      case 'renault':
+        auto = 70000;
+      break;
+      case 'fiat':
+        auto = 50000;
+      break;
+      case 'peugeot':
+        auto = 65000;
+      break;
+      case 'honda':
+        auto = 100000;
+      break;
+      case 'toyota':
+        auto = 80000;
+      break;
+      case 'chrysler':
+        auto = 55000;
+      break;
+      case 'chevrolet':
+       auto = 120000;
+      break;
+    }
+    document.getElementById("precio").value = auto;
+    document.getElementById("total").value = auto;
+  }
+  else
+  {
+    //var v1 = parseInt(document.getElementById("precio").value);
+    //  var pretotal = document.getElementById("pretotal").innerText.value;
+    var auto;
+    var op2 = document.getElementById("marca").value;
+    switch(op2)
+    {
+      case 'renault':
+        auto = 70000;
+      break;
+      case 'fiat':
+        auto = 50000;
+      break;
+      case 'peugeot':
+        auto = 65000;
+      break;
+      case 'honda':
+        auto = 100000;
+      break;
+      case 'toyota':
+        auto = 80000;
+      break;
+      case 'chrysler':
+        auto = 55000;
+      break;
+      case 'chevrolet':
+        auto = 120000;
+      break;
+    }
+    document.getElementById("precio").value = auto;
+
+    var pretotal;
+    var op = document.getElementById("cuota").value;
+    switch(op)
+    {
+      case '6':
+        pretotal = eval(auto)*1.18;
+      break;
+      case '12':
+        pretotal = eval(auto)*1.29;
+      break;
+      case '24':
+        pretotal = eval(auto)*1.47;
+      break;
+    }
+    document.getElementById("total").value = pretotal;
+
+  }
+
+  if (document.getElementById("financiado").checked)
+  {
+    document.getElementById("cuota").disabled = false;
+  }
+}
+
+
+</script>
+<form name="miform" action="">
+<label><center class="style1">Agencia de Autos</center></label>
+<br>
+<br>
+
+<legend style="margin:0px auto;"><span class="style3">Datos Personales:</span></legend>
+<br>
+<br>
+
+<label for="nombre"><span class="style2">Nombre:</span></label>&nbsp;
+<br>
+<input type="text" name="Nombre" id="NOMBRE" style="height: 21px"/>
+<br>
+<br>
+
+<label for="apellido"><span class="style2">Apellido:</span></label>&nbsp;&nbsp;
+<br>
+<input type="text" name="Apellido" id="APELLIDO" style="height: 21px"/>
+<br>
+<br>
+
+<label for="cuit"><span class="style2">Cuil: (Ingrese su cuil/cuit sin puntos, sin guion y sin digito verificador)</span></label>
+<br>
+<input type="number" name="Cuil" id="CUIL" maxlength="10" style="height: 21px"/>
+<br>
+<br>
+
+<label for="dv"><span class="style2">Ingrese Digito Verificador:</span></label>
+<br>
+<input type="number" name="Numero Verificador" id="NUMERO VERIFICADOR" maxlength="1" style="height: 21px"/>
+<br>
+<br>
+<input type="button" name="asdasf" value="Verificar CUIL" onclick="todo()">
+<br>
+<br>
+
+<label for="marcas"><span class="style2">Seleccionar marca de auto:</span></label>
+<br>
+<select name="marca" id="marca">
+	<option id="renault" value="renault" onclick="auto()">Renault</option>
+	<option id="fiat" value="fiat" onclick="auto()">Fiat</option>
+	<option id="peugeot" value="peugeot" onclick="auto()">Peugeot</option>
+	<option id="honda" visible="false" value="honda" onclick="auto()">Honda</option>
+	<option id="toyota" value="toyota" onclick="auto()">Toyota</option>
+	<option id="chrysler" value="chrysler" onclick="auto()">Chrysler</option>
+	<option id="chevrolet" value="chevrolet" onclick="auto()">Chevrolet</option>
+</select>
+<br>
+<br>
+
+<label for="precio"><span class="style2">Precio del Auto:</span></label>
+<br>
+<input type="text" name="precio" id="precio" disabled="false" maxlength="7" style="height: 21px"/>
+<br>
+<br>
+
+<fieldset style=" width:200px; ">
+<legend><span class="style2">Condicion de Venta:</span></legend>
+<input type="radio" id="efectivo" name="option" value="Efectivo" checked="true" onclick="chek()" /><label>Efectivo</label>
+<input type="radio" id="financiado" name="option" value="Financiado" onclick="chek()" /><label>Financiado</label>
+</fieldset>
+<br>
+
+<label for="cuotas"><span class="style2">Cantidad de Cuotas:</span></label>
+<br>
+<select disabled="false" name="cuota" id="cuota">
+	<option id="6">6</option>
+	<option id="12">12</option>
+	<option id="24">24</option>
+</select>
+<br>
+<br>
+
+<label for="total"><span class="style2">Precio Total:</span></label>
+<input type="text" id="total" disabled="false" name="hola bb">
+<br>
+<br>
+
+<label for="pretotal" id="pretotal"><span class="style2"></span></label>
+<input type="button" name="calcu" value="Calcular" onclick="calcula()">
+<input type="button" name="enviar" value="Enviar" onclick="validar()">
+</form>
+</body>
+</html>
